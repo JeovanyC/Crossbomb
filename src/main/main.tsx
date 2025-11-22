@@ -1,23 +1,52 @@
-function CheckGameStatus(board_map: Map<string, string, boolean>): boolean {
+class Game {
 
-    // Check if any of the player winned the game:
-    // If so -> return TRUE
-    // if not -> return FALSE
-    
-    if (check_game == false) {return false}
-    else if (check_game == true) {return true}
+    constructor(this, player_1: string, player_2: string)
 }
 
-function MakeBoard(): Map<string, string, boolean> {
+class Board {
 
-    // This function NEED to be runned just one time -> in the begging of the game
+    constructor() {
+	this.board: Map<[number, number], string> = MakeBoard()
+    }
+
+    private MakeBoard(): Map<[number, number], string> {
+
+    // This function NEEDS to be run just only once at the begging of the game
     
-    var empty_board = Map
-    for(i: number = 0; i < 3; i++) {
-	for (j: number = 0; j < 3; j++) {
-	    empty_board set 
+    // Map <array, string>:
+    
+    // 1. array -> coordinates (x, y)
+    // 2. string -> empty or occupaid (player_name) 
+    
+    const board = new Map<[number, number], string>;
+    for(let i: number = 0; i < 3; i++) {
+	for (let j: number = 0; j < 3; j++) {
+	    board.set([i, j], "empty");
 	}
     }
+    return board;
+    }
+
+    private CheckBoard(): boolean {
+
+    // Check if any of the player winned the game:
+    
+    // If so -> return TRUE
+    // If not -> return FALSE
+
+    for (let i: number = 0; i < 3; i++) {
+	for (let j: number = 0; j < 3; j++) {
+	    
+	}
+    }
+	
+    if (check_game == false) {return false}
+    else if (check_game == true) {return true}
+    }
+}
+
+function CheckGameStatus(board_map: Map<string, string, string>): boolean {
+
 }
 
 function RenderBoard()
